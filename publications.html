@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Publications — Swapnil Shivaji Boyane</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔬</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --canopy: #003135;
+  --canopy-2: #024950;
+  --paper: #ffffff;
+  --paper-2: #eaf6f7;
+  --ink: #072e31;
+  --ink-soft: #55686b;
+  --gold: #0fa4af;
+  --gold-deep: #024950;
+  --rust: #964734;
+  --line: #cdeaed;
+  --parchment-edge: rgba(15,164,175,0.14);
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:'Inter', -apple-system, sans-serif;
+  font-size:17px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--gold-deep);}
+a:focus-visible, button:focus-visible{outline:2px solid var(--gold); outline-offset:3px;}
+
+.wrap{max-width:1020px; margin:0 auto; padding:0 28px;}
+
+/* ---------- Navigation ---------- */
+nav.top{
+  position:sticky; top:0; z-index:20;
+  background:linear-gradient(180deg, var(--canopy), var(--canopy-2));
+  border-bottom:1px solid rgba(0,0,0,0.25);
+}
+nav.top .wrap{display:flex; align-items:center; justify-content:space-between; padding:16px 28px; flex-wrap:wrap; gap:10px;}
+.brand{
+  display:flex; align-items:center; gap:9px;
+  font-family:'Fraunces', serif; font-weight:500; font-size:1.1rem;
+  color:#eaf6f7; text-decoration:none;
+}
+.brand .mark{
+  width:20px; height:20px; border:1.5px solid var(--gold); border-radius:50%;
+  display:inline-block; position:relative; flex:0 0 auto;
+}
+.brand .mark::after{
+  content:''; position:absolute; left:50%; top:50%;
+  width:5px; height:5px; background:var(--gold); border-radius:50%;
+  transform:translate(-50%,-50%);
+}
+.navlinks{display:flex; gap:22px; flex-wrap:wrap;}
+.navlinks a{color:#8fb3b6; text-decoration:none; font-size:0.9rem;}
+.navlinks a:hover{color:#eaf6f7;}
+.navlinks a[aria-current="page"]{color:var(--gold); border-bottom:1.5px solid var(--gold); padding-bottom:2px;}
+
+main{
+  display:block;
+  background-image:radial-gradient(rgba(150,112,42,0.05) 1px, transparent 1px);
+  background-size:22px 22px;
+}
+.content-pad{max-width:1020px; margin:0 auto; padding:58px 28px 70px;}
+
+/* ---------- Page intro + summary counts ---------- */
+h1{
+  font-family:'Fraunces', serif; font-weight:500;
+  font-size:clamp(1.95rem, 3.8vw, 2.75rem);
+  line-height:1.14; margin:0 0 18px; color:var(--canopy);
+}
+.page-intro{margin-bottom:40px; padding-bottom:28px; border-bottom:1px solid var(--line);}
+.section-note{color:var(--ink-soft); font-size:0.9rem; margin:0;}
+
+.pub-summary{display:flex; flex-wrap:wrap; gap:14px; margin:0 0 18px;}
+.pub-count{
+  display:flex; align-items:baseline; gap:8px;
+  border:1px solid var(--line);
+  border-left:3px solid var(--gold-deep);
+  background:var(--paper-2);
+  padding:10px 18px;
+  border-radius:2px;
+  box-shadow:4px 4px 0 var(--parchment-edge);
+}
+.pub-count .num{font-family:'Fraunces', serif; font-size:1.6rem; font-weight:500; color:var(--canopy); line-height:1;}
+.pub-count .label{font-size:0.88rem; color:var(--ink-soft);}
+.pub-count.accepted{border-left-color:var(--rust);}
+.pub-count.submitted{border-left-color:var(--rust);}
+
+/* ---------- Publication list ---------- */
+h2{font-family:'Fraunces', serif; font-weight:500; font-size:1.34rem; margin:44px 0 8px; color:var(--canopy);}
+h2:first-of-type{margin-top:0;}
+
+.pub-list{border-top:1px solid var(--line);}
+.pub-item{display:grid; grid-template-columns:118px 1fr; gap:18px; padding:18px 0; border-bottom:1px solid var(--line);}
+.pub-item .status{
+  font-size:0.75rem; letter-spacing:0.01em; color:var(--gold-deep);
+  border:1px solid var(--gold-deep); border-radius:20px; padding:3px 10px;
+  text-align:center; height:fit-content; white-space:nowrap;
+}
+.pub-item .status.rev{color:var(--rust); border-color:var(--rust);}
+.pub-item .status.pub{color:var(--ink-soft); border-color:var(--ink-soft);}
+.pub-item h3{font-family:'Fraunces', serif; font-weight:500; font-style:normal; font-size:1.02rem; line-height:1.45; margin:0 0 4px;}
+.pub-item h3 a{color:var(--ink); text-decoration:none;}
+.pub-item h3 a:hover{color:var(--gold-deep); text-decoration:underline;}
+.pub-item p{margin:0; color:var(--ink-soft); font-size:0.9rem;}
+.pub-item .journal{color:var(--rust); font-style:italic;}
+
+/* ---------- Footer ---------- */
+footer{border-top:1px solid var(--line); padding:32px 0 46px; font-size:0.86rem; color:var(--ink-soft); background:var(--paper);}
+footer .wrap{display:flex; flex-wrap:wrap; gap:8px 18px; align-items:center;}
+footer a{color:var(--ink-soft); text-decoration:none;}
+footer a:hover{color:var(--gold-deep);}
+footer svg{width:14px; height:14px; vertical-align:-2px; margin-right:5px; fill:currentColor;}
+
+/* ---------- Responsive ---------- */
+@media (max-width:800px){
+  .navlinks{gap:14px;}
+  .content-pad{padding:36px 20px 50px;}
+}
+@media (max-width:600px){
+  .pub-item{grid-template-columns:1fr; gap:8px;}
+  .pub-item .status{justify-self:start;}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+}
+</style>
+</head>
+<body>
+<nav class="top">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="mark"></span>Swapnil Shivaji Boyane</a>
+    <div class="navlinks">
+      <a href="index.html">Home</a>
+      <a href="research.html">Research</a>
+      <a href="fieldwork.html">Fieldwork</a>
+      <a href="publications.html" aria-current="page">Publications</a>
+      <a href="teaching.html">Teaching</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <div class="content-pad">
+
+    <div class="page-intro">
+      <h1>Publications</h1>
+      <div class="pub-summary" aria-label="Publication summary">
+        <div class="pub-count"><span class="num" id="count-published">17</span><span class="label">Published</span></div>
+        <div class="pub-count accepted"><span class="num" id="count-accepted">1</span><span class="label">Accepted</span></div>
+        <div class="pub-count submitted"><span class="num" id="count-submitted">1</span><span class="label">Submitted</span></div>
+      </div>
+      <p class="section-note">* Corresponding author.</p>
+    </div>
+
+    <!-- ===================== 2026 ===================== -->
+    <h2>2026</h2>
+    <div class="pub-list">
+      <div class="pub-item">
+        <span class="status rev">Accepted</span>
+        <div>
+          <h3>Edible Coleoptera as a dietary resource: integrating indigenous knowledge and nutritional composition from Northeast India</h3>
+          <p><strong>Swapnil S Boyane*</strong>, Aavika Dhanda, A.P. Ranjith, T. Shantibala, Dharma Rajan Priyadarsanan.</p>
+        </div>
+      </div>
+      <div class="pub-item">
+        <span class="status rev">Submitted</span>
+        <div>
+          <h3>Rapid diversification and incomplete lineage sorting drive incongruent codiversification between the Texas endemic carpenter ant <em>Camponotus texanus</em> and its endosymbiont <em>Blochmanniella</em></h3>
+          <p><strong>Swapnil S Boyane*</strong>, Ashley Allison, Kole Menendez, Joseph D Manthey.</p>
+        </div>
+      </div>
+      <div class="pub-item">
+        <span class="status pub">Published</span>
+        <div>
+          <h3><a href="https://doi.org/10.11646/zootaxa.5878.1.6">Integrative taxonomy of <em>Parastrachia nagaensis</em> Distant (Hemiptera: Heteroptera: Parastrachiidae) from Nagaland, India</a></h3>
+          <p><strong>Swapnil S Boyane*</strong>, Dharma Rajan Priyadarsanan, Hemant V Ghate. <span class="journal">Zootaxa</span>. <a href="https://doi.org/10.11646/zootaxa.5878.1.6">DOI / link</a></p>
+        </div>
+      </div>
+      <div class="pub-item">
+        <span class="status pub">Published</span>
+        <div>
+          <h3><a href="https://doi.org/10.1111/mec.70488">Expansion From Lowland Pleistocene Refugia Followed by Cryptic Introgression in an African Elevational Generalist Bird</a></h3>
+          <p>Ethan F Gyllenhaal, <strong>Swapnil S Boyane</strong>, Javier E Colmenares‐Pinzón, Ari A Rice, María C Tocora, Frank Bapeamoni, Bertin Murhabale, Charles Kahindo, Ben D Marks, Joseph D Manthey. <span class="journal">Molecular Ecology</span>. <a href="https://doi.org/10.1111/mec.70488">DOI / link</a></p>
+        </div>
+      </div>
+      <div class="pub-item">
+        <span class="status pub">Published</span>
+        <div>
+          <h3><a href="https://doi.org/10.1002/ece3.74045">Quaternary Climatic Changes and Biogeographic Barriers Drove Codiversification in the Obligate Mutualism Between <em>Camponotus laevigatus</em> and Its Endosymbiont <em>Blochmanniella</em></a></h3>
+          <p><strong>Swapnil S Boyane*</strong>, Garrett J Behrends, Joseph D Manthey. <span class="journal">Ecology and Evolution</span>. <a href="https://doi.org/10.1002/ece3.74045">DOI / link</a></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================== 2025 ===================== -->
+    <h2>2025</h2>
+    <div class="pub-list">
+      <div class="pub-item">
+        <span class="status pub">Published</span>
+        <div>
+          <h3><a href="https://doi.org/10.11646/jihs.2.4.2">An Apterous Specimen of <em>Guithera feana</em> Distant (Reduviidae: Emesinae: Leistarchini) from Karnataka, India</a></h3>
+          <p>Hemant V Ghate, <strong>Swapnil S Boyane</strong>, Seena Narayanan Karimbumkara, Rajkamal Goswami. <span class="journal">Journal of the International Heteropterists' Society</span>. <a href="https://doi.org/10.11646/jihs.2.4.2">DOI / link</a></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================== 2024 ===================== -->
+    <h2>2024</h2>
+    <div class="pub-list">
+      <div class="pub-item">
+        <span class="status pub">Published</span>
+        <div>
+          <h3><a href="https://doi.org/10.11646/zootaxa.5507.4.4">A new apterous species of the genus <em>Ploiaria</em> (Hemiptera: Heteroptera: Reduviidae) from Maharashtra, India</a></h3>
+          <p>Hemant V Ghate, <strong>Swapnil S Boyane*</strong>, Balasaheb V Sarode, Pratik P Pansare, Dávid Rédei. <span class="journal">Zootaxa</span>. <a href="https://doi.org/10.11646/zootaxa.5507.4.4">DOI / link</a></p>
+        </div>
+      </div>
+      <div class="pub-item">
+        <span class="status pub">Published</span>
+        <div>
+          <h3><a href="https://doi.org/10.11646/zootaxa.5506.1.6">First record of <em>Hornylia nalanda</em> from India (Hemiptera: Heteroptera: Reduviidae: Emesinae)</a></h3>
+          <p><strong>Swapnil S Boyane*</strong>, AP Ranjith, Hemant V Ghate. <span class="journal">Zootaxa</span>. <a href="https://doi.org/10.11646/zootaxa.5506.1.6">DOI / link</a></p>
+        </div>
+      </div>
+      <div class="pub-item">
+        <span class="status pub">Published</span>
+        <div>
+          <h3><a href="https://doi.org/10.1371/journal.pone.0298176">Integrative taxonomy of the genus <em>Coridius</em> Illiger, 1807 (Hemiptera: Heteroptera: Dinidoridae) reveals hidden diversity and three new species from North-East India</a></h3>
+          <p><strong>Swapnil S Boyane</strong>, Sandeep Sen, Dharma Rajan Priyadarsanan, Pavan Kumar Thunga, Nikhil U Joshi, Hemant V Ghate. <span class="journal">PLOS ONE</span>. <a href="https://doi.org/10.1371/journal.pone.0298176">DOI / link</a></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================== 2022 ===================== -->
+    <h2>2022</h2>
+    <div class="pub-list">
+      <div class="pub-item">
+        <span class="status pub">Published</span>
+        <div>
+          <h3><a href="https://doi.org/10.11646/zootaxa.5188.4.4">Redescription of <em>Bagauda avidus</em> (Hemiptera: Heteroptera: Reduviidae: Emesinae) with notes on other species of the genus in India</a></h3>
+          <p>Nikhil U Joshi, <strong>Swapnil S Boyane</strong>, Hemant V Ghate. <span class="journal">Zootaxa</span>. <a href="https://doi.org/10.11646/zootaxa.5188.4.4">DOI / link</a></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================== 2021 ===================== -->
+    <h2>2021</h2>
+    <div class="pub-list">
+      <div class="pub-item">
+        <span class="status pub">Published</span>
+        <div>
+          <h3><a href="https://doi.org/10.11609/jott.7124.13.12.19824-19830">First report of <em>Scipinia horrida</em> (Stål) (Heteroptera: Reduviidae) from Assam, with comments on related genus <em>Irantha</em> Stål</a></h3>
+          <p>Anjana Singha Naorem, Santana Saikia, Anandita Buragohain, Rubina Azmeera Begum, <strong>Swapnil S Boyane</strong>, Hemant V Ghate. <span class="journal">Journal of Threatened Taxa</span>. <a href="https://doi.org/10.11609/jott.7124.13.12.19824-19830">DOI / link</a></p>
+        </div>
+      </div>
+      <div class="pub-item">
+        <span class="status pub">Published</span>
+        <div>
+          <h3><a href="https://doi.org/10.11646/zootaxa.4990.2.5">Description of the adult of the thread-legged assassin bug <em>Eugubinus araneus</em> (Hemiptera: Reduviidae) from India, with comments on other congeneric species</a></h3>
+          <p>Hemant V Ghate, <strong>Swapnil S Boyane</strong>, Michael D Webb. <span class="journal">Zootaxa</span>. <a href="https://doi.org/10.11646/zootaxa.4990.2.5">DOI / link</a></p>
+        </div>
+      </div>
+      <div class="pub-item">
+        <span class="status pub">Published</span>
+        <div>
+          <h3><a href="https://doi.org/10.11609/jott.6763.13.3.17930-17938">Redescription of the bug <em>Aschistocoris brevicornis</em> (Heteroptera: Coreidae) and first report on its life history from northern Maharashtra, India</a></h3>
+          <p>Digvijay R Jadhav, Renuka R Khairnar, Balasaheb V Sarode, <strong>Swapnil S Boyane</strong>, Hemant V Ghate. <span class="journal">Journal of Threatened Taxa</span>. <a href="https://doi.org/10.11609/jott.6763.13.3.17930-17938">DOI / link</a></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================== 2020 ===================== -->
+    <h2>2020</h2>
+    <div class="pub-list">
+      <div class="pub-item">
+        <span class="status pub">Published</span>
+        <div>
+          <h3><a href="https://doi.org/10.15560/16.6.1609">First illustrated report of <em>Batocera lineolata</em> Chevrolat, 1852 (Cerambycidae, Lamiinae, Batocerini) from India</a></h3>
+          <p><strong>Swapnil S Boyane</strong>, Barkha Subba, Dharma Rajan Priyadarsanan, Hemant V Ghate. <span class="journal">Check List</span>. <a href="https://doi.org/10.15560/16.6.1609">DOI / link</a></p>
+        </div>
+      </div>
+      <div class="pub-item">
+        <span class="status pub">Published</span>
+        <div>
+          <h3><a href="https://doi.org/10.11646/zootaxa.4729.4.11">Redescription of <em>Ploiaria mellea</em> (Heteroptera: Reduviidae: Emesinae) and its first report from India</a></h3>
+          <p><strong>Swapnil S Boyane</strong>, Hemant V Ghate. <span class="journal">Zootaxa</span>. <a href="https://doi.org/10.11646/zootaxa.4729.4.11">DOI / link</a></p>
+        </div>
+      </div>
+      <div class="pub-item">
+        <span class="status pub">Published</span>
+        <div>
+          <h3><a href="https://doi.org/10.11609/jott.5960.12.10.16389-16391">First report of the assassin bug <em>Epidaus wangi</em> (Heteroptera: Reduviidae: Harpactorinae) from India</a></h3>
+          <p><strong>Swapnil S Boyane</strong>, Hemant V Ghate. <span class="journal">Journal of Threatened Taxa</span>. <a href="https://doi.org/10.11609/jott.5960.12.10.16389-16391">DOI / link</a></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================== 2019 ===================== -->
+    <h2>2019</h2>
+    <div class="pub-list">
+      <div class="pub-item">
+        <span class="status pub">Published</span>
+        <div>
+          <h3><a href="https://doi.org/10.11646/zootaxa.4652.3.14">Description of a new species of the genus <em>Bagauda</em> (Heteroptera: Reduviidae: Emesinae) from Maharashtra State, India</a></h3>
+          <p>Hemant V Ghate, <strong>Swapnil S Boyane</strong>, Nikhil U Joshi. <span class="journal">Zootaxa</span>. <a href="https://doi.org/10.11646/zootaxa.4652.3.14">DOI / link</a></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================== 2018 ===================== -->
+    <h2>2018</h2>
+    <div class="pub-list">
+      <div class="pub-item">
+        <span class="status pub">Published</span>
+        <div>
+          <h3><a href="https://doi.org/10.11609/jott.4029.10.7.11948-11954">A first report and additional description of the assassin bug <em>Neostaccia plebeja</em> (Stål) (Heteroptera: Reduviidae) from India with comparative notes on <em>Staccia diluta</em> Stål from Assam, India</a></h3>
+          <p>Balasaheb V Sarode, <strong>Swapnil S Boyane</strong>, Hemant V Ghate. <span class="journal">Journal of Threatened Taxa</span>. <a href="https://doi.org/10.11609/jott.4029.10.7.11948-11954">DOI / link</a></p>
+        </div>
+      </div>
+      <div class="pub-item">
+        <span class="status pub">Published</span>
+        <div>
+          <h3><a href="https://doi.org/10.11609/jott.3971.10.5.11659-11664">The first report of two thread-legged assassin bugs (Hemiptera: Reduviidae: Emesinae) from India</a></h3>
+          <p>Balasaheb V Sarode, <strong>Swapnil S Boyane</strong>, Hemant V Ghate. <span class="journal">Journal of Threatened Taxa</span>. <a href="https://doi.org/10.11609/jott.3971.10.5.11659-11664">DOI / link</a></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================== 2017 ===================== -->
+    <h2>2017</h2>
+    <div class="pub-list">
+      <div class="pub-item">
+        <span class="status pub">Published</span>
+        <div>
+          <h3><a href="https://doi.org/10.11609/jott.3451.9.10.10792-10803">Illustrated description and notes on biology of <em>Dicranocephalus lateralis</em> (Signoret) (Coreoidea: Stenocephalidae) from Maharashtra State, India</a></h3>
+          <p>Balasaheb V Sarode, Nikhil U Joshi, <strong>Swapnil S Boyane</strong>, Subodh S. Gaikwad, Pratik P. Pansare, Hemant V Ghate. <span class="journal">Journal of Threatened Taxa</span>. <a href="https://doi.org/10.11609/jott.3451.9.10.10792-10803">DOI / link</a></p>
+        </div>
+      </div>
+      <div class="pub-item">
+        <span class="status pub">Published</span>
+        <div>
+          <h3><a href="https://doi.org/10.11646/zootaxa.4303.2.5">First record of <em>Rhaphidosoma atkinsoni</em> (Heteroptera: Reduviidae: Harpactorinae) from Maharashtra, India, with redescription and observations on its bionomics</a></h3>
+          <p>Pratik P. Pansare, Nikhil U Joshi, <strong>Swapnil S Boyane</strong>, Hemant V Ghate. <span class="journal">Zootaxa</span>. <a href="https://doi.org/10.11646/zootaxa.4303.2.5">DOI / link</a></p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; 2026 Swapnil Shivaji Boyane</span>
+    <a href="https://github.com/SwapnilBoyane"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>GitHub</a>
+    <a href="https://scholar.google.com/citations?user=9psP4J4AAAAJ&amp;hl=en"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zm0 13.5L4.5 12.5V15c0 2 3 4 7.5 4s7.5-2 7.5-4v-2.5L12 16.5z"/></svg>Google Scholar</a>
+    <a href="mailto:boyane.swapnil@gmail.com"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 4h20v16H2V4zm2 2v.01L12 13l8-6.99V6H4zm16 2.24l-8 7-8-7V18h16V8.24z"/></svg>Email</a>
+  </div>
+</footer>
+
+<script>
+  // Counts each paper's status label and updates the summary boxes.
+  const counts = {published:0, accepted:0, submitted:0};
+  document.querySelectorAll('.pub-item .status').forEach(el => {
+    const key = el.textContent.trim().toLowerCase();
+    if (key in counts) counts[key]++;
+  });
+  for (const key in counts) {
+    const el = document.getElementById('count-' + key);
+    if (el) el.textContent = counts[key];
+  }
+</script>
+</body>
+</html>

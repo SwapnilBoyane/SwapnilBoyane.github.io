@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Swapnil Shivaji Boyane — Research</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔬</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --canopy: #003135;
+  --canopy-2: #024950;
+  --paper: #ffffff;
+  --paper-2: #eaf6f7;
+  --ink: #072e31;
+  --ink-soft: #55686b;
+  --gold: #0fa4af;
+  --gold-deep: #024950;
+  --rust: #964734;
+  --line: #cdeaed;
+  --parchment-edge: rgba(15,164,175,0.14);
+  --col: 640px;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:'Inter', -apple-system, sans-serif;
+  font-size:17px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--gold-deep);}
+a:focus-visible, button:focus-visible, summary:focus-visible{outline:2px solid var(--gold); outline-offset:3px;}
+
+.wrap{max-width:1020px; margin:0 auto; padding:0 28px;}
+
+/* ---------- Navigation ---------- */
+nav.top{
+  position:sticky; top:0; z-index:20;
+  background:linear-gradient(180deg, var(--canopy), var(--canopy-2));
+  border-bottom:1px solid rgba(0,0,0,0.25);
+}
+nav.top .wrap{display:flex; align-items:center; justify-content:space-between; padding:16px 28px; flex-wrap:wrap; gap:10px;}
+.brand{
+  display:flex; align-items:center; gap:9px;
+  font-family:'Fraunces', serif; font-weight:500; font-size:1.1rem;
+  color:#eaf6f7; text-decoration:none;
+}
+.brand .mark{
+  width:20px; height:20px; border:1.5px solid var(--gold); border-radius:50%;
+  display:inline-block; position:relative; flex:0 0 auto;
+}
+.brand .mark::after{
+  content:''; position:absolute; left:50%; top:50%;
+  width:5px; height:5px; background:var(--gold); border-radius:50%;
+  transform:translate(-50%,-50%);
+}
+.navlinks{display:flex; gap:22px; flex-wrap:wrap;}
+.navlinks a{color:#8fb3b6; text-decoration:none; font-size:0.9rem;}
+.navlinks a:hover{color:#eaf6f7;}
+.navlinks a[aria-current="page"]{color:var(--gold); border-bottom:1.5px solid var(--gold); padding-bottom:2px;}
+
+main{
+  display:block;
+  background-image:radial-gradient(rgba(150,112,42,0.05) 1px, transparent 1px);
+  background-size:22px 22px;
+}
+.content-pad{max-width:1020px; margin:0 auto; padding:58px 28px 70px;}
+
+/* ---------- Intro: photo + facts beside name and About me ---------- */
+.intro{
+  display:grid;
+  grid-template-columns:260px 1fr;
+  grid-template-areas:
+    "photo text"
+    "facts text";
+  column-gap:52px;
+  row-gap:18px;
+  align-items:start;
+}
+.intro-photo{grid-area:photo;}
+.intro-facts{grid-area:facts;}
+.intro-text{grid-area:text;}
+
+.profile-photo{
+  width:100%;
+  aspect-ratio:1/1;
+  object-fit:cover;
+  border-radius:8px;
+  border:2px solid var(--gold);
+  display:block;
+  box-shadow:5px 5px 0 var(--parchment-edge);
+}
+.facts{
+  margin:0;
+  border:1px solid var(--line);
+  border-top:3px solid var(--gold);
+  background:var(--paper-2);
+  padding:20px 22px;
+  border-radius:2px;
+  box-shadow:5px 5px 0 var(--parchment-edge);
+}
+.facts dt{font-size:0.78rem; letter-spacing:0.02em; color:var(--ink-soft); margin-top:14px;}
+.facts dt:first-child{margin-top:0;}
+.facts dd{margin:2px 0 0; font-size:0.94rem; color:var(--ink);}
+
+.kicker{
+  font-size:0.92rem; color:var(--ink-soft); margin:0 0 14px;
+  display:flex; align-items:center; gap:10px; flex-wrap:wrap;
+}
+.kicker::before{content:''; width:22px; height:1.5px; background:var(--gold); display:inline-block;}
+.kicker-logo{height:34px; width:auto; display:inline-block;}
+
+h1{
+  font-family:'Fraunces', serif; font-weight:500;
+  font-size:clamp(1.95rem, 3.8vw, 2.75rem);
+  line-height:1.14; margin:0 0 16px; color:var(--canopy);
+}
+.lede{font-size:1.08rem; color:var(--ink); margin:0 0 30px; max-width:60ch;}
+
+.about{max-width:var(--col); padding-top:26px; border-top:1px solid var(--line);}
+.about h2{margin-bottom:12px;}
+.about p{margin:0 0 14px; font-size:1rem;}
+.about p:last-child{margin-bottom:0;}
+
+.cta-row{display:flex; flex-wrap:wrap; gap:12px; margin-top:26px;}
+.btn{
+  display:inline-block; border:1px solid var(--gold-deep); color:var(--gold-deep);
+  text-decoration:none; padding:9px 18px; border-radius:2px; font-size:0.94rem;
+  background:var(--paper);
+}
+.btn:hover{background:var(--gold-deep); color:var(--paper);}
+.btn.ghost{border-color:var(--line); color:var(--ink-soft);}
+.btn.ghost:hover{background:var(--paper-2); color:var(--ink);}
+
+/* ---------- Sections ---------- */
+h2{font-family:'Fraunces', serif; font-weight:500; font-size:1.34rem; margin:0 0 8px; color:var(--canopy);}
+.section-note{color:var(--ink-soft); font-size:0.94rem; margin:6px 0 26px; max-width:56ch;}
+.page-section{margin-top:64px;}
+
+.specimen-deck{display:flex; flex-direction:column; gap:14px;}
+.specimen-card{
+  border:1px solid var(--line);
+  border-left:3px solid var(--gold-deep);
+  background:var(--paper-2);
+  border-radius:2px;
+  box-shadow:5px 5px 0 var(--parchment-edge);
+  overflow:hidden;
+}
+.specimen-card summary{
+  list-style:none; cursor:pointer; padding:20px 22px;
+  display:flex; align-items:center; justify-content:space-between; gap:16px;
+}
+.specimen-card summary::-webkit-details-marker{display:none;}
+.specimen-card summary h3{
+  font-family:'Fraunces', serif; font-style:italic; font-weight:500;
+  font-size:1.14rem; margin:0; color:var(--ink);
+}
+.specimen-card summary .tag{font-size:0.8rem; color:var(--rust); font-style:normal; display:block; margin-top:3px;}
+.specimen-card .chev{
+  flex:0 0 auto; width:22px; height:22px; border:1px solid var(--gold-deep); border-radius:50%;
+  display:flex; align-items:center; justify-content:center; color:var(--gold-deep); font-size:0.85rem;
+  transition:transform 0.15s ease;
+}
+.specimen-card[open] .chev{transform:rotate(45deg); background:var(--gold-deep); color:var(--paper);}
+.specimen-card .body{padding:0 22px 22px; color:var(--ink); font-size:0.97rem;}
+.specimen-card .body p{margin:0 0 30px;}
+.specimen-card .body a.more{font-size:0.88rem;}
+
+.grid-2{display:grid; grid-template-columns:1fr 1fr; gap:18px;}
+.card{
+  border:1px solid var(--line);
+  border-left:3px solid var(--gold-deep);
+  background:var(--paper-2);
+  padding:22px 24px;
+  border-radius:2px;
+  box-shadow:5px 5px 0 var(--parchment-edge);
+  display:flex; flex-direction:column;
+}
+.card .journal-logo{height:200px; width:auto; max-width:100%; object-fit:contain; align-self:flex-start; margin-bottom:14px;}
+.card h3{font-family:'Fraunces', serif; font-style:italic; font-weight:500; font-size:1.06rem; line-height:1.4; margin:0 0 6px; color:var(--ink);}
+.card h3 a{color:var(--ink); text-decoration:none;}
+.card h3 a:hover{color:var(--gold-deep); text-decoration:underline;}
+.card .locus{font-size:0.84rem; color:var(--rust); margin:0;}
+.card a.more{margin-top:auto; padding-top:14px; font-size:0.87rem;}
+
+/* ---------- Footer ---------- */
+footer{border-top:1px solid var(--line); padding:32px 0 46px; font-size:0.86rem; color:var(--ink-soft); background:var(--paper);}
+footer .wrap{display:flex; flex-wrap:wrap; gap:8px 18px; align-items:center;}
+footer a{color:var(--ink-soft); text-decoration:none;}
+footer a:hover{color:var(--gold-deep);}
+footer svg{width:14px; height:14px; vertical-align:-2px; margin-right:5px; fill:currentColor;}
+
+/* ---------- Responsive ---------- */
+@media (max-width:800px){
+  .navlinks{gap:14px;}
+  .content-pad{padding:36px 20px 50px;}
+  .intro{
+    grid-template-columns:1fr;
+    grid-template-areas:
+      "photo"
+      "text"
+      "facts";
+    row-gap:28px;
+  }
+  .intro-photo{max-width:180px;}
+  .grid-2{grid-template-columns:1fr;}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  .specimen-card .chev{transition:none;}
+}
+</style>
+</head>
+<body>
+<nav class="top">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="mark"></span>Swapnil Shivaji Boyane</a>
+    <div class="navlinks">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="research.html">Research</a>
+      <a href="fieldwork.html">Fieldwork</a>
+      <a href="publications.html">Publications</a>
+      <a href="teaching.html">Teaching</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <div class="content-pad">
+
+    <!-- Intro: photo and facts on the left, name and About me on the right -->
+    <div class="intro">
+      <div class="intro-photo">
+        <img src="assests/profile/IMG_5539.jpg" alt="Swapnil Shivaji Boyane" class="profile-photo">
+      </div>
+
+      <dl class="facts intro-facts">
+        <dt>Program</dt>
+        <dd>Ph.D. Student</dd>
+        <dt>Affiliation</dt>
+        <dd>Department of Biological Sciences, Texas Tech University</dd>
+        <dt>Advisor</dt>
+        <dd><a href="https://mantheylab.org/people/">Dr. Joseph D. Manthey</a></dd>
+      </dl>
+
+      <div class="intro-text">
+        <p class="kicker"	>Texas Tech University <img src="assests/journal/ttu-logo.gif" alt="" class="kicker-logo"></p>
+        <section class="about" id="about">
+          <h2>About me</h2>
+          <p>I'm a Ph.D. student in the Department of Biological Sciences at Texas Tech University, working in the <a href="https://mantheylab.org/">Manthey Lab</a>. My research focuses on the evolutionary processes that generate and maintain biodiversity, including how populations diverge, how gene flow and hybridization shape genomes, and how past climatic changes have influenced species’ evolutionary histories.</p>
+		<p>I use whole-genome data to study speciation, gene flow, hybridization, and codiversification across diverse taxa. My current research focuses on carpenter ants and their bacterial endosymbionts, while my broader interests include understanding how genomic variation and evolutionary histories are shaped across different organisms and ecological systems.</p>
+		<p>I also enjoy teaching and have taught Introduction to Biology (BIOL 1403) at Texas Tech. Outside research, I am active in indoor and outdoor sports.</p>
+        </section>
+
+        <div class="cta-row">
+          <a class="btn" href="research.html">See the research</a>
+          <a class="btn ghost" href="contact.html">Get in touch</a>
+        </div>
+      </div>
+    </div>
+
+    
+
+    <section class="page-section">
+      <h2>Recent articles</h2>
+      <div class="grid-2">
+        <div class="card">
+          <img src="assests/journal/molecular_ecology.jpeg" alt="Molecular Ecology" class="journal-logo">
+          <h3><a href="https://doi.org/10.1111/mec.70488">Expansion From Lowland Pleistocene Refugia Followed by Cryptic Introgression in an African Elevational Generalist Bird</a></h3>
+          <p class="locus">Molecular Ecology</p>
+          <a class="more" href="publications.html">All publications</a>
+        </div>
+        <div class="card">
+          <img src="assests/journal/eco_evo.jpg" alt="Ecology and Evolution" class="journal-logo">
+          <h3><a href="https://doi.org/10.1002/ece3.74045">Quaternary Climatic Changes and Biogeographic Barriers Drove Codiversification in the Obligate Mutualism Between <span style="font-style:normal">Camponotus laevigatus</span> and Its Endosymbiont <span style="font-style:normal">Blochmanniella</span></a></h3>
+          <p class="locus">Ecology and Evolution</p>
+          <a class="more" href="publications.html">All publications</a>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; 2026 Swapnil Shivaji Boyane</span>
+    <a href="https://github.com/SwapnilBoyane"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>GitHub</a>
+    <a href="https://scholar.google.com/citations?user=9psP4J4AAAAJ&amp;hl=en"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zm0 13.5L4.5 12.5V15c0 2 3 4 7.5 4s7.5-2 7.5-4v-2.5L12 16.5z"/></svg>Google Scholar</a>
+    <a href="mailto:boyane.swapnil@gmail.com"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 4h20v16H2V4zm2 2v.01L12 13l8-6.99V6H4zm16 2.24l-8 7-8-7V18h16V8.24z"/></svg>Email</a>
+  </div>
+</footer>
+</body>
+</html>
